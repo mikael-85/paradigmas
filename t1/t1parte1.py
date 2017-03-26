@@ -1,21 +1,21 @@
-# Exercício - 1
+# Exercício 1
 
 def soma(x +y):
     return (pow(x^2)+(pow(y^2))
 
-#Exercicio - 2
+#Exercicio 2
 
 def hasEqHeads(l1,l2):
     return l1[0] == l2 [0]
 
-#exercicio - 3
+#exercicio 3
             
 def Srst(x): return "Sr " + x
 
 def lista(l1):
     return list(map(Srst, l1))
 
-# exercicio - 4
+# exercicio 4
 
 def contEspaco (c):
     return c in ' '
@@ -23,7 +23,7 @@ def contEspaco (c):
 def espaco (x):
     return len(list(filter(contEsp,x)))
 
-#Exercicio - 5 
+#Exercicio 5 
 
 def listcalc (n):
     return ((3n*2) + (2/n +1))
@@ -31,7 +31,7 @@ def listcalc (n):
 def listaa (x):
     return list(map(listc,x))        
             
-#exercicio -  6
+#exercicio 6
             
 def lisNeg(x):
     return x < 0        
@@ -39,7 +39,7 @@ def lisNeg(x):
 def lisN(l1):
     return list(filter(lisNeg,l1))
             
-#exercicio -  7
+#exercicio 7
 
 def auxListaCem (x):
     return ((x >= 1) & (x <= 100))        
@@ -47,7 +47,7 @@ def auxListaCem (x):
 def listaCem(lista):
     return list(filter(auxListaCem, lista))
 
-#exercicio - 8
+#exercicio 8
 
 def paresAux(x):
     return x % 2 == 0
@@ -55,12 +55,21 @@ def paresAux(x):
 def funcPares(listaa):
     return list(filter(paresAux, listaa))
 
-#exercicio - 9
+#exercicio 9
+
+def charAux(c):
+    def f(x):
+        return c == x
+    return f
 
 def charFound(c,s):
-    return s.count (c) >= 1       
+    return len(list(filter(charAux(c),s))) > 0
+# ex 9 lambda:
+
+def charFound2(c,s):
+    return return len(list(filter(lambda x: c ==x,s)))> 0 
             
-# exercicio - 10
+# exercicio 10
 
 def listaHtml(x):
     return '<b>'+ x + '</b>'         
@@ -69,5 +78,11 @@ def listaa (l1):
     return list(map(listaHtml,l1)        
 
             
+# ex anterior
 
+            
+def isVowel(c):
+return c in 'aeiouAEIOU'
 
+def countVowel(x):
+return len(list(filter(isVowel,x)))
