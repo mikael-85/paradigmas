@@ -33,13 +33,15 @@ def genCode(palavra):
 
 #Exercicio 7: - fazer
 
-def 
+def myZip(l1,l2):
+    return [(x,y) for in x,y in 
+            
 
 
-#exercício 8: - fazer
+#exercício 8:
 
 def enumerate(words):
-    return [(x,y) for x in range(1,len(words)) for y in words]
+    return [(x,y) for x,y in zip([x for x in range(1,len(words)+1)],words)]
 
 
 #exercicio 9:
@@ -54,4 +56,4 @@ def isBin(string):
 #exercio 10: - fazer
 
 def bin2dec(digits):
-    return [int(digits,2) in digits]    
+    return []    
