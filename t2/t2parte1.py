@@ -31,7 +31,7 @@ def genCode(palavra):
     return ''.join([(x[0]+x[-1]) for x in palavra])
         
 
-#Exercicio 7: - fazer
+#Exercicio 7: - fazer - ?
 
 def myZip(l1,l2):
     return [(x,y) for in x,y in 
@@ -44,7 +44,7 @@ def enumerate(words):
     return [(x,y) for x,y in zip([x for x in range(1,len(words)+1)],words)]
 
 
-#exercicio 9:
+#exercicio 9:  
 
 def isBin(string):
     resp = [True if char in '10' else False for char in string]
@@ -53,7 +53,7 @@ def isBin(string):
     else:
            return False
 
-#exercio 10: - fazer
+#exercio 10:
 
-def bin2dec(digits):
-    return []    
+def bin2dec(digits): 
+    return int(''.join([str(x) for x in digits]),2)    
