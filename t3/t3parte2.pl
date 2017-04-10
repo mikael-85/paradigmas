@@ -24,5 +24,5 @@ isBin(L):- L = [I|T],
 
 
 /*exercicio 7 parte 2*/
-mesmaPosicao(A,L1,L2):- t.
+/*mesmaPosicao(A,L1,L2):- t. */
 
