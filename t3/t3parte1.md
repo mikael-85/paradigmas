@@ -24,9 +24,9 @@ false.                                     #Retornou falso.
 
 
 # Exercício 2: 
+Em andamento... 
 
-
-#Exercício 3: 
+# Exercício 3: 
 
 factorial(0, 1).
 factorial(N, NFact) :-
