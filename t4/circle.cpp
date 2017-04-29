@@ -1,20 +1,25 @@
 #include <iostream>
+#include "point.cpp"
 
 const double PI = 3.14159;
 
 class Circle {
 private:
-   double x;
-   double y;
+   Point p;
+   //double x;
+   //double y;
    double r;
 public:
    Circle() {
-      x = y = r = 0.0;
-   std::cout << "Valores de saída" << std::endl;
+      p = Point();
+      r = 0.0;
+      //x = y = r = 0.0;
+   std::cout << "Valores de saida" << std::endl;
    }
   Circle(double a, double b, double c){
-      x = a;
-      y = b;
+      p.Point(a,b);
+      //x = a;
+      //y = b;
       r = c;
   }
    double area() {

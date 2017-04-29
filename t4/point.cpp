@@ -24,15 +24,17 @@ void move (double dx, double dy){
 //calculada segundo o teorema de Pitágoras. Você vai precisar da função std::sqrt,
 //por isso vai precisar de #include <cmath> no início do programa.
 
-double distanceTo(Point p2){
-    return std::sqrt((x - p2.x)^2+(y - p2.y));
+double distanceTo(Point* p2){
+    return sqrt(((x - p2->x)^2)+((y - p2->y)^2));
 }
 
 };
 
 int main() {
    Point p1;
+
    Point* p2 = new Point(2,3);
+
    //Point* p3 = new Point ();
 
 }
