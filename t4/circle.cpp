@@ -23,23 +23,24 @@ public:
 
    double setRadius(double radius){ // ???
       r= radius + 2;
-      std::cout << "raio: ", r << std::endl;
+      std::cout << "Novo raio: " << r << std::endl;
       return r;
    }
 };
 
 int main() {
-   Circle c1;
-   Circle* c2 = new Circle();
-   Circle* c3 = new Circle(2,3,4);
-   Circle circs[10];
-
+    Circle c1;
+    Circle* c2 = new Circle();
+    Circle* c3 = new Circle(2,3,4);
+    Circle circs[10];
+    c3->setRadius(4);
    //testes
 
    //fim dos teste
-   std::cout << c1.area() << std::endl;
-   std::cout << c2->area() << std::endl;
-   std::cout << c3->area()<< std::endl;
+    std::cout << c1.area() << std::endl;
+    std::cout << c2->area() << std::endl;
+    std::cout << c3->area()<< std::endl;
 
-   delete c2;
+    delete c2;
+    delete c3;
   }
