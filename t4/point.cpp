@@ -27,8 +27,8 @@ double getY(){return y;}
 
 //trocar pelos circulos:
 
-//double distanceTo(Circle* c2, Circle* c3){
-//    return sqrt(((c2->x - c3->x)*(c2->x - c3->x))+ ((c3->y - c2->y)*(c3->y - c2->y)));
+//double distanceTo(Point p2, Point *p3){
+    //return sqrt(((p2.x - p3->x)*(p2.x - p3->x))+ ((p2.y - p3->y)*(p2.y - p3->y)));
 //}
  void imprime_P(){
     cout<<"x: "<< getX() <<endl;
@@ -40,8 +40,29 @@ double getY(){return y;}
 /*
 int main() {
     //construindo pontos:
-    Point p1;
+    Point p;
+    p.construtor(1,2);
 
+    //declarando vetor dos pontos:
+    Point *vet_p;
+    vet_p = new Point[5];
+
+    for(int i=0; i<5; i++){
+        vet_p[i].construtor(i+1, i+2);
+        }
+
+    for(int i=0; i<5; i++){
+       cout<< p.distanceTo(p, &vet_p[i])<<endl;
+
+        delete [] vet_p;
+
+
+
+
+
+
+
+//Testes
     Point* p2 = new Point();
     p2->construtor(2,5);
 
