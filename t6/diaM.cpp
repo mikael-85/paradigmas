@@ -20,13 +20,13 @@ public:
 // escolher preço pelo tamanho
     switch (taman){
         case 1:
-            return preco = 0.5;
-            break;
-        case 2:
             return preco = 1;
             break;
-        case 3:
+        case 2:
             return preco = 2;
+            break;
+        case 3:
+            return preco = 3;
             break;
         }
 
@@ -45,7 +45,10 @@ public:
         }
  float area(){
         ar = pi*(raio*raio);
+
         }
+
+
 };
 
 class Retangulo : public Biscoito{
@@ -95,10 +98,10 @@ int main(){
                 cir.push_back(Circulo( (rand()%) / ));
                 break;
             case 1:
-                cir.push_back(Circulo( (rand()%) / ));
+                cir.push_back(Retangulo( (rand()%) / ));
                 break;
             case 2:
-                cir.push_back(Circulo( (rand()%) / ));
+                cir.push_back(Triangulo( (rand()%) / ));
                 break;
         }
 
