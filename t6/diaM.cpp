@@ -3,9 +3,9 @@
 #include <cstdlib>
 #include <algorithm>
 #include <iterator>
+#include <string>
 
 using namespace std;
-// classe pai biscoito
 
 class Biscoito{
 private:
@@ -27,10 +27,40 @@ public:
 			taman = 3;
 		}
 	}
+	string getTamanho(){
+		string a;
+		switch(taman){
+			case 1:
+				a = "Pequeno";
+				break;
+			case 2:
+				a = "Medio";
+				break;
+			case 3:
+				a = "Grande";
+				break;
+		}
+		return a;
+	}
 };
 
+class vetorBiscoito{
+	private:
+		string tamanho;
+		string tipo;
+		float area;
+	public:
+		vetorBiscoito(string ta, string ti, float ar){
+			tamanho = ta;
+			tipo = ti;
+			area = ar;
+		}
 
-//classes filhos
+		void imprime(){
+			cout << tamanho << tipo << area;
+		}
+};
+
 class Circulo : public Biscoito{
 private:
     float ar;
@@ -41,6 +71,9 @@ public:
         ar = 3,1415*(raio*raio);
         setAll(ar);
     }
+    float getArea(){
+    	return ar;
+	}
 };
 
 class Retangulo : public Biscoito{
@@ -55,6 +88,9 @@ public:
         ar = lad * altura;
         setAll(ar);
     }
+    float getArea(){
+    	return ar;
+	}
 };
 
 class Triangulo : public Biscoito{
@@ -69,15 +105,20 @@ public:
         ar = (base*altura)/2;
         setAll(ar);
     }
+    float getArea(){
+    	return ar;
+	}
 };
-
-
-// fim das classes filho
 
 int main(){
 	vector<Circulo> circulos;
     vector<Triangulo> triangulos;
 	vector<Retangulo> retangulos;
+	vector<vetorBiscoito> biscoitos;
+	vector<Circulo>::iterator pc;
+	vector<Triangulo>::iterator pt;
+	vector<Retangulo>::iterator pr;
+	vector<vetorBiscoito> pbiscoitos;
     int num,i,tipo;
 
     cout << "quantos biscoitos deseja produzir? ";
@@ -85,7 +126,6 @@ int main(){
 
     for(i =0; i < num; i++){
         tipo = rand()%3;
-
         switch (tipo){
             case 0:
                 circulos.push_back(Circulo( (rand()%13 + 8) / 10));
@@ -99,5 +139,8 @@ int main(){
         }
     }
 
-
+    //cout << "Os biscoitos ordenados por tamanho:";
+    for( pc = circulos.begin(); pc != circulos.end(); pc++){
+    	pbiscoitos.push_back(vetorBiscoito(pc->getTamanho(),"Circulo",pc->getArea()));
+	}
 }
