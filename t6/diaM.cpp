@@ -20,18 +20,16 @@ public:
 // escolher preço pelo tamanho
     switch (taman){
         case 1:
-            if taman == 1;
-            return preco = 0,5;
-        break;
+            return preco = 0.5;
+            break;
         case 2:
-            if taman == 2;
             return preco = 1;
-        break;
+            break;
         case 3:
-            if taman == 3;
             return preco = 2;
-        break;
+            break;
         }
+
     };
 
 
