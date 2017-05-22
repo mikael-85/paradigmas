@@ -1,9 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <ctime>
 #include <cstdlib>
-#include <algorithm>
+#include <vector>
 #include <iterator>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -56,8 +57,11 @@ class vetorBiscoito{
 			area = ar;
 		}
 
-		void imprime(){
-			cout << tamanho << tipo << area;
+		void imprimir(){
+			cout <<"Tamanho: "<< tamanho<<", com formato de: " << tipo <<", com area: " << area << endl; //arrumar
+		}
+		bool operator<(vetorBiscoito& pbiscoitos){
+        	return area > pbiscoitos.area;
 		}
 };
 
@@ -118,7 +122,7 @@ int main(){
 	vector<Circulo>::iterator pc;
 	vector<Triangulo>::iterator pt;
 	vector<Retangulo>::iterator pr;
-	vector<vetorBiscoito> pbiscoitos;
+	vector<vetorBiscoito>::iterator pbiscoitos;
     int num,i,tipo;
 
     cout << "quantos biscoitos deseja produzir? ";
@@ -131,7 +135,7 @@ int main(){
                 circulos.push_back(Circulo( (rand()%13 + 8) / 10));
                 break;
             case 1:
-                triangulos.push_back(Triangulo( (rand()%4 + 2) / 10, (rand()%4 + 2) / 10));
+                triangulos.push_back(Triangulo( (rand()%10 + 40) / 10, (rand()%10 + 40) / 10)); // arrumar intervalo
                 break;
             case 2:
                 retangulos.push_back(Retangulo( (rand()%22 + 15) / 10, (rand()%22 + 15) / 10));
@@ -139,8 +143,22 @@ int main(){
         }
     }
 
-    //cout << "Os biscoitos ordenados por tamanho:";
     for( pc = circulos.begin(); pc != circulos.end(); pc++){
-    	pbiscoitos.push_back(vetorBiscoito(pc->getTamanho(),"Circulo",pc->getArea()));
+    	biscoitos.push_back(vetorBiscoito(pc->getTamanho(),"Circulo",pc->getArea()));
 	}
+	for( pt = triangulos.begin(); pt != triangulos.end(); pt++){
+    	biscoitos.push_back(vetorBiscoito(pt->getTamanho(),"Triangulo",pt->getArea()));
+	}
+	for( pr = retangulos.begin(); pr != retangulos.end(); pr++){
+    	biscoitos.push_back(vetorBiscoito(pr->getTamanho(),"Retangulo",pr->getArea()));
+	}
+
+	sort(biscoitos.begin(), biscoitos.end());
+	cout << "\nOs biscoitos produzidos foram: " << endl;
+	cout<<" "<<endl;
+	for( pbiscoitos = biscoitos.begin(); pbiscoitos != biscoitos.end(); pbiscoitos++){
+		pbiscoitos->imprimir();
+
+	}
+
 }
