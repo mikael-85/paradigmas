@@ -4,12 +4,12 @@
 
 // classe pai biscoito
 
-class biscoito{
+class Biscoito{
 private:
     int taman;
     float preco;
 public:
-    biscoito(){
+    Biscoito(){
         taman=preco=0;
         }
     setPreco(int TP){
@@ -33,7 +33,7 @@ public:
 
 
 //classes filhos
-class Circle : public biscoito{
+class Circle : public Biscoito{
 private:
     float x;
     float y;
@@ -47,7 +47,7 @@ public:
         }
 };
 
-class Retangulo : public biscoito{
+class Retangulo : public Biscoito{
 private:
     float lad;
     float altura;
@@ -61,7 +61,7 @@ public:
         }
 };
 
-class Triangulo : public biscoito{
+class Triangulo : public Biscoito{
 private:
     float base;
     float altura;
