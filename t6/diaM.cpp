@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <algorithm>
+#include <iterator>
 
-
-#define pi 3.14;
-
+using namespace std;
 // classe pai biscoito
 
 class Biscoito{
@@ -15,30 +15,30 @@ public:
     Biscoito(){
         taman=preco=0;
     }
-	setAll(float area){
-		if(area>=2 && area<=4){
+	void setAll(float area){
+		if(area>=2 && area <=4){
 			taman = 1;
 			preco = 1;
-		}else if(area>=5 && area<=7){
+		}else if(area>=5 && area <=7){
 			preco = 2;
 			taman = 2;
-		}else if(area>= 8 && area<=13){
+		}else if(area>= 8 && area <=13){
 			preco = 3;
 			taman = 3;
 		}
 	}
-    };
+};
 
 
 //classes filhos
-class Circle : public Biscoito{
+class Circulo : public Biscoito{
 private:
     float ar;
     float raio;
 public:
-    Circle(float r){
+    Circulo(float r){
         raio = r;
-        ar = pi*(raio*raio);
+        ar = 3,1415*(raio*raio);
         setAll(ar);
     }
 };
@@ -51,7 +51,7 @@ private:
 public:
     Retangulo (float a, float b){
         lad = a;
-        altura =b;
+        altura = b;
         ar = lad * altura;
         setAll(ar);
     }
@@ -78,25 +78,25 @@ int main(){
 	vector<Circulo> circulos;
     vector<Triangulo> triangulos;
 	vector<Retangulo> retangulos;
-    int num,i;
-    count<< "quantos biscoitos deseja produzir? ";
+    int num,i,tipo;
+
+    cout << "quantos biscoitos deseja produzir? ";
     cin >> num;
 
-    for(int i =0; i < num; i++){
+    for(i =0; i < num; i++){
         tipo = rand()%3;
 
         switch (tipo){
             case 0:
-                circulos.push_back(Circulo( (rand()%) / ));
+                circulos.push_back(Circulo( (rand()%13 + 8) / 10));
                 break;
             case 1:
-                triangulos.push_back(Retangulo( (rand()%) / ));
+                triangulos.push_back(Triangulo( (rand()%4 + 2) / 10, (rand()%4 + 2) / 10));
                 break;
             case 2:
-                retangulos.push_back(Triangulo( (rand()%) / ));
+                retangulos.push_back(Retangulo( (rand()%22 + 15) / 10, (rand()%22 + 15) / 10));
                 break;
         }
-
     }
 
 
