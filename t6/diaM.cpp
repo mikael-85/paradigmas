@@ -54,6 +54,8 @@ private:
     float area;
 public:
     Retangulo (float a, float b){
+        lad = a;
+        altura =b;
         }
 
     areaQ(int a){
@@ -67,6 +69,10 @@ private:
     float altura;
     float ar;
 public:
+    Triangulo (float b, float c){
+        base =b;
+        altura =c;
+    }
     int area(){
         ar = (base*altura)/2
     }
