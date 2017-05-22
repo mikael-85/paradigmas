@@ -3,7 +3,9 @@
 #define pi 3.14;
 
 // classe pai biscoito
+
 class biscoito{
+private:
     int taman;
     float preco;
 public:
@@ -45,10 +47,24 @@ public:
         }
 };
 
-class square : public biscoito{
+class Quadrado : public biscoito{
+private:
+    float lad;
+    float altura;
+public:
+    areaQ(int a){
+        a = lad * altura;
+        }
+};
+
+class Triangulo : public biscoito{
 private:
 
+public:
+
 };
+
+
 // fim das classes filho
 
 int main(){
