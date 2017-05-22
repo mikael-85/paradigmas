@@ -47,11 +47,15 @@ public:
         }
 };
 
-class Quadrado : public biscoito{
+class Retangulo : public biscoito{
 private:
     float lad;
     float altura;
+    float area;
 public:
+    Retangulo (float a, float b){
+        }
+
     areaQ(int a){
         a = lad * altura;
         }
@@ -59,9 +63,13 @@ public:
 
 class Triangulo : public biscoito{
 private:
-
+    float base;
+    float altura;
+    float ar;
 public:
-
+    int area(){
+        ar = (base*altura)/2
+    }
 };
 
 
