@@ -82,7 +82,25 @@ public:
 // fim das classes filho
 
 int main(){
+    int num;
+    count<< "quantos biscoitos deseja produzir? ";
+    cin >> num;
 
+    for(int i =0; i < num; i++){
+        tipo = rand()%3;
+        switch (tipo){
+            case 0:
+                cir.push_back(Circulo( (rand()%) / ));
+                break;
+            case 1:
+                cir.push_back(Circulo( (rand()%) / ));
+                break;
+            case 2:
+                cir.push_back(Circulo( (rand()%) / ));
+                break;
+        }
+
+    }
 
 
 }
