@@ -38,15 +38,15 @@ public:
 //classes filhos
 class Circle : public Biscoito{
 private:
-    float x;
-    float y;
-    float r;
+    float ar;
+    float raio;
 public:
-    Circle(){
-        x=y=r= 0.0;
+    Circle(float r){
+        raio = r;
+        ar = 0.0;
         }
  float area(){
-        return pi*(r*r);
+        ar = pi*(raio*raio);
         }
 };
 
