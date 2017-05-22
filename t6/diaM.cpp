@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <cstdlib>
+
 
 #define pi 3.14;
 
@@ -88,6 +91,7 @@ int main(){
 
     for(int i =0; i < num; i++){
         tipo = rand()%3;
+
         switch (tipo){
             case 0:
                 cir.push_back(Circulo( (rand()%) / ));
