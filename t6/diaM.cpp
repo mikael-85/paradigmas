@@ -7,6 +7,11 @@
 
 // classe pai biscoito
 
+/*pequeno: 2 a 4 cm - 1 real
+  médio:  5 a 7 cm - 2 reais
+  grande 8 a  13  - 3 reais
+*/
+
 class Biscoito{
 private:
     int taman;
@@ -89,6 +94,11 @@ int main(){
     int num;
     count<< "quantos biscoitos deseja produzir? ";
     cin >> num;
+
+    vector<Circulo> circulos;
+    vector<Triangulo> triangulos;
+    vector<Retangulo> retangulos;
+
 
     for(int i =0; i < num; i++){
         tipo = rand()%3;
